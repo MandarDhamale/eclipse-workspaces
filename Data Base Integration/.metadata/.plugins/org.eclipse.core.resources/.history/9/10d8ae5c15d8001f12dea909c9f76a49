@@ -1,0 +1,12 @@
+<jsp:include page="include/header.jsp"></jsp:include>
+
+<br>
+<br>
+<br>
+<h1>Hello World</h1>
+<br>
+<br>
+<br>
+
+
+<jsp:include page="include/footer.jsp"></jsp:include>

@@ -1,0 +1,89 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Form Container */
+form {
+    background-color: #ffffff; /* White form background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px 30px;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Form Elements */
+form h2 {
+    margin-bottom: 20px;
+    color: #014d4e; /* Your preferred header color */
+    text-align: center;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333333;
+}
+
+form input[type="text"],
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+form input[type="submit"] {
+    background-color: #014d4e; /* Button color */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #013f42; /* Darker button on hover */
+}
+
+/* Adjustments for radio buttons and checkboxes */
+form input[type="radio"] + label,
+form input[type="checkbox"] + label {
+    display: inline-block;
+    margin-right: 15px;
+    font-weight: normal;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    form {
+        padding: 15px 20px;
+    }
+
+    form h2 {
+        font-size: 18px;
+    }
+
+    form input[type="submit"] {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}

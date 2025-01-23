@@ -1,0 +1,30 @@
+<jsp:include page="include/header.jsp"></jsp:include>
+<%@ page import = "java.util.List" %>
+<%@ page import = "com.mandar.entity.User" %>
+<br>
+<br>
+<br>
+<br>
+
+<h1>List Users</h1>
+
+<table border="1">
+
+<thead>
+
+<th>User ID</th>
+<th>Username</th>
+<th>Email</th>
+
+</thead>
+
+</table>
+
+<%
+
+List<User> listUsers =  (List) request.getAttribute("listUsers");
+
+
+%>
+
+<jsp:include page="include/footer.jsp"></jsp:include>

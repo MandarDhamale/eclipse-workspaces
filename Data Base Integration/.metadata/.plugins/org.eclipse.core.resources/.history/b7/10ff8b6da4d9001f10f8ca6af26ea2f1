@@ -1,0 +1,10 @@
+package com.mandar.model;
+
+public class UsersModel {
+
+	public List<User> listuser(){
+		
+	}
+	
+	
+}

@@ -1,0 +1,11 @@
+package com.mandar.model;
+import com.mandar.entity.User;
+
+public class UsersModel {
+
+	public List<User> listuser(){
+		
+	}
+	
+	
+}

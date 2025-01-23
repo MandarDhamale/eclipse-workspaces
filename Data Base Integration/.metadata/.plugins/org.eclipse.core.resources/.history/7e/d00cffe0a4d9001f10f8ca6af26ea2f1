@@ -1,0 +1,15 @@
+package com.mandar.model;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.mandar.entity.User;
+
+public class UsersModel {
+
+	public List<User> listuser(){
+		List<User> listUsers = new ArrayList<User>();
+		return listUsers;
+	}
+	
+	
+}

@@ -9,6 +9,17 @@
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
 
     <title>${param.titlePage }</title>
+    
+    <%
+    
+    if(request.getAttribute("title") == null){
+    	out.print("<title>Page</title>");
+    }else{
+    	out.print("<title>" + request.getAttribute("title") + "</title>");
+    }
+    
+    %>
+    
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">

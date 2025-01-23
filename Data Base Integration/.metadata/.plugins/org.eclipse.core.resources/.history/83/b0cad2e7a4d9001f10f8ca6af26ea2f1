@@ -1,0 +1,21 @@
+package com.mandar.model;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.mandar.config.DatabaseConfig;
+import com.mandar.entity.User;
+
+public class UsersModel {
+
+	public List<User> listuser(){
+		List<User> listUsers = new ArrayList<User>();
+		
+		//step 1 - get the connection object init
+		Connection connect = DatabaseConfig.getConnection();
+		
+		
+		return listUsers;
+	}
+	
+	
+}

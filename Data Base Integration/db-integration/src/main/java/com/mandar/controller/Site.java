@@ -1,8 +1,9 @@
-package com.mandar;
+package com.mandar.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
 import com.mandar.entity.User;
 import com.mandar.model.UsersModel;
 
@@ -12,24 +13,20 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/home")
-public class Home extends HttpServlet {
+@WebServlet("/Site")
+public class Site extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
 
-    public Home() {
+    public Site() {
+        super();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		String page = request.getParameter("page").toLowerCase();
 		
 		switch (page) {
-		case "home": {
-			request.setAttribute("title", "Home Page");
 
-			request.getRequestDispatcher("index.jsp").forward(request, response);
-			break;
-		}
 		case "listusers": {
 			
 			List<User> users = new ArrayList<User>();
@@ -44,7 +41,7 @@ public class Home extends HttpServlet {
 		default:
 			request.setAttribute("title", "Error Page");
 			request.getRequestDispatcher("error.jsp").forward(request, response);
-		}
+		}	
 		
 	}
 

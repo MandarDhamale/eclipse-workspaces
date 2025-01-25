@@ -1,5 +1,6 @@
 package com.mandar.model;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -42,5 +43,31 @@ public class UsersModel {
 		return listUsers;
 	}
 	
+	public void addUser(User newUser) {
+		
+		String username = newUser.getUsername();
+		String email = newUser.getEmail();
+		
+		Connection connection = null;
+		PreparedStatement statement = null;
+		
+		try {
+			
+		connection = DatabaseConfig.getConnection();
+		String query = "insert into users (username, email) values (?, ?)";
+		statement = connection.prepareStatement(query);
+		statement.setString(1, username);
+		statement.setString(2, email);
+		statement.execute();
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+		
+	}
 	
 }

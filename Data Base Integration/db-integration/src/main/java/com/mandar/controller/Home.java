@@ -33,12 +33,18 @@ public class Home extends HttpServlet {
 		
 		case "listusers": {
 			
+			User newUser = new User(0, "new_user", "new@gmail.com");
+	
+			UsersModel um = new UsersModel();
+			um.addUser(newUser);
+			
 			List<User> users = new ArrayList<User>();
 			users = new UsersModel().listuser();
 			
+			
+			
 			request.setAttribute("listUsers", users);
 			request.setAttribute("title", "List Users");
-			
 			request.getRequestDispatcher("listusers.jsp").forward(request, response);
 			break;
 		}

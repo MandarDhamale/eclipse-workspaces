@@ -23,25 +23,7 @@ public class Site extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String page = request.getParameter("page").toLowerCase();
-		
-		switch (page) {
 
-		case "listusers": {
-			
-			List<User> users = new ArrayList<User>();
-			users = new UsersModel().listuser();
-			
-			request.setAttribute("listUsers", users);
-			request.setAttribute("title", "List Users");
-			
-			request.getRequestDispatcher("listusers.jsp").forward(request, response);
-			break;
-		}
-		default:
-			request.setAttribute("title", "Error Page");
-			request.getRequestDispatcher("error.jsp").forward(request, response);
-		}	
 		
 	}
 

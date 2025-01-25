@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 
 public class DatabaseConfig {
 
+//here we are getting an connection with the database object 
+	
 	public static Connection getConnection() {
 		
 		String url = "jdbc:mysql://localhost:3306/java";

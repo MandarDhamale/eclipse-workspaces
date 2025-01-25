@@ -10,6 +10,9 @@ import com.mandar.entity.User;
 
 public class UsersModel {
 
+//here we define all the operations related to the database 
+//we use the Data
+	
 	public List<User> listuser(){
 		List<User> listUsers = new ArrayList<User>();
 		

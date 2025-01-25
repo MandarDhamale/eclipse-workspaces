@@ -39,7 +39,5 @@ for(User _user: listUsers){
 
 <br>
 <br>
-<br>
-<br>
 
 <jsp:include page="include/footer.jsp"></jsp:include>

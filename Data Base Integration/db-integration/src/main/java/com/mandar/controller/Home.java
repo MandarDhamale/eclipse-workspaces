@@ -40,6 +40,8 @@ public class Home extends HttpServlet {
 			
 			um.updateUser(new User(1, "mrd-updated", "mrd@gmail.com-updated"));
 			
+			um.deleteUser(2);
+			
 			List<User> users = new ArrayList<User>();
 			users = new UsersModel().listuser();
 			

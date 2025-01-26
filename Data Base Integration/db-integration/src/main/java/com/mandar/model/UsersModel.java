@@ -71,26 +71,41 @@ public class UsersModel {
 
 		Connection connection = null;
 		PreparedStatement statement = null;
-		
+
 		try {
-			
+
 			connection = DatabaseConfig.getConnection();
 			String query = "update users set username = ?, email = ? where user_id = ?";
-			statement = connection.prepareStatement(query); 
+			statement = connection.prepareStatement(query);
 			statement.setString(1, user.getUsername());
 			statement.setString(2, user.getEmail());
 			statement.setInt(3, user.getUser_id());
-			
+
 			statement.executeUpdate();
 			System.out.println("Update executed successfully");
-			
-			
-			
-		}catch(Exception e) {
+
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 
 	}
 
+	public void deleteUser(int user_id) {
+		
+		Connection connection = DatabaseConfig.getConnection();
+		PreparedStatement statement = null;
+		
+		try {
+			
+			String query = "delete from users where user_id = ?";
+			statement = connection.prepareStatement(query);
+			statement.setInt(1, user_id);
+			statement.execute();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+	}
 }

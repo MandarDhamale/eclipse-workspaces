@@ -38,6 +38,8 @@ public class Home extends HttpServlet {
 			UsersModel um = new UsersModel();
 			um.addUser(newUser);
 			
+			um.updateUser(new User(1, "mrd-updated", "mrd@gmail.com-updated"));
+			
 			List<User> users = new ArrayList<User>();
 			users = new UsersModel().listuser();
 			

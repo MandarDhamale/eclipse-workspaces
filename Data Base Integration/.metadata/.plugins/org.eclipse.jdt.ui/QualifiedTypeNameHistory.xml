@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.mandar.config.DatabaseConfig"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="com.mandar.config.DatabaseConfig"/>
     <fullyQualifiedTypeName name="com.mandar.entity.User"/>
     <fullyQualifiedTypeName name="com.mandar.model.UsersModel"/>
 </qualifiedTypeNameHistroy>

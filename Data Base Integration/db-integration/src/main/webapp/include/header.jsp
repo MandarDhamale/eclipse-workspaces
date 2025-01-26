@@ -58,7 +58,8 @@
         <div class="navbar-collapse collapse navbar-right">
           <ul class="nav navbar-nav">
             <li class="active"><a href="<%= request.getContextPath() %>/home?page=home">HOME</a></li>
-            <li><a href="<%= request.getContextPath() %>/home?page=listusers">LIST USERS</a></li>
+            <li><a href="<%= request.getContextPath() %>/site?page=listusers">LIST USERS</a></li>
+            <li><a href="<%= request.getContextPath() %>/site?page=adduser">ADD USERS</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">PAGES <b class="caret"></b></a>
               <ul class="dropdown-menu">

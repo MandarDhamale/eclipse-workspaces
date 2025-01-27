@@ -29,20 +29,24 @@ public class Site extends HttpServlet {
 		
 		switch (page) {
 		case "home": {
+			
 			request.setAttribute("title", "Home Page");
-
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 			break;
 		}
 		
 		case "adduser":{
+			
 			addUser(request, response);
 			break;
+			
 		}
 		
 		case "listusers": {
+			
 			listUsers(request, response);
 			break;
+			
 		}
 		
 		
@@ -54,7 +58,29 @@ public class Site extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+
+		String form = request.getParameter("form").toLowerCase();
+
+		
+		switch (form) {
+		case "adduseroperation": {
+			
+			String username = request.getParameter("username");
+			String email = request.getParameter("email");
+			
+			new UsersModel().addUser(new User(0, username, email));
+			request.getRequestDispatcher("home.jsp").forward(request, response);
+
+			break;
+		}
+	
+	
+		default:
+			request.setAttribute("title", "Error Page");
+			request.getRequestDispatcher("error.jsp").forward(request, response);
+		}
+	
+	
 	}
 	
 	protected void listUsers(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

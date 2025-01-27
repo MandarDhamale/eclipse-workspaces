@@ -6,7 +6,7 @@
 <br>
 <h1>Add user page</h1>
 
-<form action="<%= request.getContextPath() %>/site?page=adduser" method="post">
+<form action="<%= request.getContextPath() %>/site" method="post">
 
  <div class="form-group">
 User name: <input type="text" name="username" required="required"><br>

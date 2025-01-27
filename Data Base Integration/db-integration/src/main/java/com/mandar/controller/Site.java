@@ -68,8 +68,8 @@ public class Site extends HttpServlet {
 			String username = request.getParameter("username");
 			String email = request.getParameter("email");
 			
-			new UsersModel().addUser(new User(0, username, email));
-			request.getRequestDispatcher("home.jsp").forward(request, response);
+			new UsersModel().addUser(new User(username, email));
+			request.getRequestDispatcher("homehow .jsp").forward(request, response);
 
 			break;
 		}

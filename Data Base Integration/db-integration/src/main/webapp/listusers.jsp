@@ -13,6 +13,7 @@
         <th>Username</th>
         <th>Email</th>
         <th>Update</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -25,8 +26,13 @@
           <td><%= _user.getUsername() %></td>
           <td><%= _user.getEmail() %></td>
           <td>
-            <a href="<%= request.getContextPath() %>/site?page=updateuser" class="btn btn-link">
+            <a href="<%= request.getContextPath() %>/site?page=updateuser&user_id=<%= _user.getUser_id()%>&username=<%= _user.getUsername() %>&email=<%= _user.getEmail() %>" class="btn btn-link">
               <i class="bi bi-pencil"></i> <!-- Pencil icon -->
+            </a>
+          </td>
+          <td>
+            <a href="<%= request.getContextPath() %>/site?page=deleteuser&user_id=<%= _user.getUser_id()%>" class="btn btn-link" onclick="return confirm('Are you sure you want to delete the user <%= _user.getUsername() %>?');">
+              <i class="bi bi-trash text-danger"></i> <!-- Trash icon in red -->
             </a>
           </td>
         </tr>

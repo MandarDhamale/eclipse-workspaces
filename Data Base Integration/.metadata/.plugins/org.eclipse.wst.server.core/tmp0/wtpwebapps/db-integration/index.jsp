@@ -9,12 +9,12 @@
 <br>
 <br>
 <br>
+
   <div class="container text-center mt-5">
     <h1 class="display-4 mb-4">Home Page</h1>
     <p class="lead">Welcome to the home page!</p>
   </div>
-
+  
 </body>
 </html>
-
 <jsp:include page="include/footer.jsp"></jsp:include>

@@ -1,7 +1,89 @@
-	<!-- *****************************************************************************************************************
-	 FOOTER
-	 ***************************************************************************************************************** -->
-	 <div id="footerwrap">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Footer Example</title>
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Ensure the body and html take the full height */
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Wrapper for content to push the footer down */
+        .content-wrap {
+            flex: 1; /* This pushes the footer to the bottom */
+        }
+
+        /* Footer styling */
+        #footerwrap {
+            background: #333; /* Set footer background color */
+            color: white; /* Set footer text color */
+            padding: 20px 0;
+            text-align: center; /* Center align text for simplicity */
+        }
+
+        #footerwrap h4 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        #footerwrap p {
+            margin: 0; /* Ensure no extra spacing inside the footer */
+            line-height: 1.5;
+        }
+
+        .hline-w {
+            border-top: 2px solid white; /* Example for divider styling */
+            width: 50px;
+            margin: 10px auto; /* Center the divider */
+        }
+
+        #footerwrap .fa {
+            margin: 0 10px; /* Space between social icons */
+            color: white; /* Icon color */
+            text-decoration: none; /* No underline for links */
+            font-size: 20px;
+        }
+
+        #footerwrap .fa:hover {
+            color: #db222a; /* Change icon color on hover */
+        }
+
+        /* Responsive grid structure */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .col-lg-4 {
+            flex: 1 1 calc(33.333% - 20px); /* 3 equal columns with a gap */
+            min-width: 200px; /* Ensure proper responsiveness */
+        }
+    </style>
+</head>
+<body>
+    <!-- Content -->
+    <div class="content-wrap">
+        <!-- Add your main content here -->
+        <div class="container">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footerwrap">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
@@ -29,105 +111,8 @@
                         United States.<br/>
                     </p>
                 </div>
-            
-            </div><! --/row -->
-        </div><! --/container -->
-    </div><! --/footerwrap -->
-    
-   <!-- Bootstrap core JavaScript
-   ================================================== -->
-   <!-- Placed at the end of the document so the pages load faster -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-   <script src="assets/js/bootstrap.min.js"></script>
-   <script src="assets/js/retina-1.1.0.js"></script>
-   <script src="assets/js/jquery.hoverdir.js"></script>
-   <script src="assets/js/jquery.hoverex.min.js"></script>
-   <script src="assets/js/jquery.prettyPhoto.js"></script>
-     <script src="assets/js/jquery.isotope.min.js"></script>
-     <script src="assets/js/custom.js"></script>
-
-
-   <script>
-// Portfolio
-(function($) {
-   "use strict";
-   var $container = $('.portfolio'),
-       $items = $container.find('.portfolio-item'),
-       portfolioLayout = 'fitRows';
-       
-       if( $container.hasClass('portfolio-centered') ) {
-           portfolioLayout = 'masonry';
-       }
-               
-       $container.isotope({
-           filter: '*',
-           animationEngine: 'best-available',
-           layoutMode: portfolioLayout,
-           animationOptions: {
-           duration: 750,
-           easing: 'linear',
-           queue: false
-       },
-       masonry: {
-       }
-       }, refreshWaypoints());
-       
-       function refreshWaypoints() {
-           setTimeout(function() {
-           }, 1000);   
-       }
-               
-       $('nav.portfolio-filter ul a').on('click', function() {
-               var selector = $(this).attr('data-filter');
-               $container.isotope({ filter: selector }, refreshWaypoints());
-               $('nav.portfolio-filter ul a').removeClass('active');
-               $(this).addClass('active');
-               return false;
-       });
-       
-       function getColumnNumber() { 
-           var winWidth = $(window).width(), 
-           columnNumber = 1;
-       
-           if (winWidth > 1200) {
-               columnNumber = 5;
-           } else if (winWidth > 950) {
-               columnNumber = 4;
-           } else if (winWidth > 600) {
-               columnNumber = 3;
-           } else if (winWidth > 400) {
-               columnNumber = 2;
-           } else if (winWidth > 250) {
-               columnNumber = 1;
-           }
-               return columnNumber;
-           }       
-           
-           function setColumns() {
-               var winWidth = $(window).width(), 
-               columnNumber = getColumnNumber(), 
-               itemWidth = Math.floor(winWidth / columnNumber);
-               
-               $container.find('.portfolio-item').each(function() { 
-                   $(this).css( { 
-                   width : itemWidth + 'px' 
-               });
-           });
-       }
-       
-       function setPortfolio() { 
-           setColumns();
-           $container.isotope('reLayout');
-       }
-           
-       $container.imagesLoaded(function () { 
-           setPortfolio();
-       });
-       
-       $(window).on('resize', function () { 
-       setPortfolio();          
-   });
-})(jQuery);
-</script>
- </body>
+            </div>
+        </div>
+    </div>
+</body>
 </html>

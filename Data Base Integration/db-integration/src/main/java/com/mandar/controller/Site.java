@@ -42,8 +42,23 @@ public class Site extends HttpServlet {
 			
 		}
 		
+		case "updateuser":{
+			
+			updateUser(request, response);
+			break;
+			
+		}
+		
 		case "listusers": {
 			
+			listUsers(request, response);
+			break;
+			
+		}
+		
+		case "deleteuser": {
+			
+			deleteUser(request, response);
 			listUsers(request, response);
 			break;
 			
@@ -56,6 +71,8 @@ public class Site extends HttpServlet {
 		}
 		
 	}
+
+
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -70,6 +87,20 @@ public class Site extends HttpServlet {
 			
 			new UsersModel().addUser(new User(username, email));
 			request.getRequestDispatcher("homehow .jsp").forward(request, response);
+
+			break;
+		}
+		
+		case "updateuseroperation": {
+			
+			String username = request.getParameter("username");
+			String email = request.getParameter("email");
+			Integer user_id = Integer.parseInt(request.getParameter("user_id"));
+
+			new UsersModel().updateUser(new User(user_id, username, email));
+			
+			updateUser(request, response);
+
 
 			break;
 		}
@@ -99,6 +130,20 @@ public class Site extends HttpServlet {
 		
 		request.setAttribute("title", "Add user Page");
 		request.getRequestDispatcher("adduser.jsp").forward(request, response);
+	
+	}
+	
+	protected void updateUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		request.setAttribute("title", "Update user Page");
+		request.getRequestDispatcher("updateuser.jsp").forward(request, response);
+	
+	}
+	
+	private void deleteUser(HttpServletRequest request, HttpServletResponse response) {
+
+		Integer user_id = Integer.parseInt(request.getParameter("user_id"));
+		new UsersModel().deleteUser(user_id);
 		
 		
 	}

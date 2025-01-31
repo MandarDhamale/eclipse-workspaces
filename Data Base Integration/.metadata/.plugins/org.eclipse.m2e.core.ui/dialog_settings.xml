@@ -3,6 +3,7 @@
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
 			<item value="/home/mandar-dhamale/eclipse-workspaces/Data Base Integration"/>
+			<item value="/home/mandar-dhamale/eclipse-workspaces"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -26,12 +27,14 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.mandar.hibernate_setup"/>
 			<item value="com.mandar.db_integration"/>
 		</list>
 		<list key="groupId">
 			<item value="com.mandar"/>
 		</list>
 		<list key="artifactId">
+			<item value="hibernate-setup"/>
 			<item value="db-integration"/>
 		</list>
 		<list key="projectNameTemplate">

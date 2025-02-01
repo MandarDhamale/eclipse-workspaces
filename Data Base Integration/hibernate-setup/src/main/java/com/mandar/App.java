@@ -10,10 +10,14 @@ public class App {
 
 	public static void main(String[] args) {
 
-		Users user = new Users("mkd", "pwd", "mak", "dha");
-		
-		getUser(8);
+		Users user = new Users("mandardhamale", "simple", "mandar", "dhamale");
 
+//		createUser(user);
+//		getUser(10);
+//		updateUserPassword(10, "complex_password");
+		deleteuser(12);
+		
+		
 	}
 
 	public static void createUser(Users user) {
@@ -48,13 +52,10 @@ public class App {
 
 	public static void getUser(int user_id) {
 
-		SessionFactory sessionFactory = new Configuration()
-				.configure("hibernate.cfg.xml")
-				.addAnnotatedClass(Users.class)
-				.buildSessionFactory();
-		
+		SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml")
+				.addAnnotatedClass(Users.class).buildSessionFactory();
+
 		Session session = sessionFactory.openSession();
-		
 
 		try {
 
@@ -74,4 +75,53 @@ public class App {
 
 	}
 
+	public static void updateUserPassword(int user_id, String password) {
+
+		SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml")
+				.addAnnotatedClass(Users.class).buildSessionFactory();
+
+		Session session = sessionFactory.openSession();
+
+		try {
+
+			Users user = new Users();
+			session.beginTransaction();
+
+			user = session.get(Users.class, user_id);
+			user.setPassword(password);
+
+			session.getTransaction().commit();
+			System.out.println("Password updated successfully");
+
+		} finally {
+			session.close();
+			sessionFactory.close();
+		}
+
+	}
+
+	public static void deleteuser(int user_id) {
+		
+		SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Users.class).buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		
+		try {
+			
+			Users user = new Users();
+			session.beginTransaction();
+			
+			user = session.get(Users.class, user_id);
+			session.delete(user);
+			
+			session.getTransaction().commit();
+			System.out.println("User delete successfully");
+			
+		} finally {
+			session.close();
+			sessionFactory.close();
+		}
+		
+		
+	}
+	
 }

@@ -22,6 +22,10 @@ public class Users {
 
 	@Column(name = "lastname")
 	String lastname;
+	
+	public Users() {
+		super();
+	}
 
 	public Users(String username, String password, String firstname, String lastname) {
 		super();
@@ -70,6 +74,13 @@ public class Users {
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
+
+	@Override
+	public String toString() {
+		return "Users [user_id=" + user_id + ", username=" + username + ", password=" + password + ", firstname="
+				+ firstname + ", lastname=" + lastname + "]";
+	}
+	
 	
 	
 }

@@ -9,6 +9,6 @@
     <fullyQualifiedTypeName name="com.mandar.model.UsersModel"/>
     <fullyQualifiedTypeName name="org.hibernate.SessionFactory"/>
     <fullyQualifiedTypeName name="org.hibernate.Session"/>
-    <fullyQualifiedTypeName name="com.mandar.entity.Users"/>
     <fullyQualifiedTypeName name="org.hibernate.cfg.Configuration"/>
+    <fullyQualifiedTypeName name="com.mandar.entity.Users"/>
 </qualifiedTypeNameHistroy>

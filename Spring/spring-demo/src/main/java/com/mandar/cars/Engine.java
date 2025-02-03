@@ -7,4 +7,8 @@ public class Engine {
 
 	String type = "V8";
 	
+	public String specs() {
+		return "V8";
+	}
+	
 }

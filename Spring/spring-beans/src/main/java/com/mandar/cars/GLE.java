@@ -10,7 +10,7 @@ import com.mandar.interfaces.Engine;
 
 public class GLE implements Car {
 
-//	@Autowired
+	@Autowired
 	Engine engine;
 	
 //	public GLE(Engine engine) {
@@ -20,11 +20,11 @@ public class GLE implements Car {
 //	}
 
 	
-	@Autowired
-	@Qualifier("v8")
-	public void setEngine(Engine engine) {
-		this.engine = engine;
-	}
+//	@Autowired
+//	@Qualifier("v8")
+//	public void setEngine(Engine engine) {
+//		this.engine = engine;
+//	}
 	
 	
 	
@@ -34,7 +34,7 @@ public class GLE implements Car {
 //		Engine engine = new Engine();
 //		engine.type = "V16"; this is how I would need to use it if I don't use autowired
 		
-		System.out.println("SUV from Mercedes with engine: "  + engine.specs());
+		System.out.println("SUV from Mercedes with engine "  + engine.specs());
 		
 	}
 

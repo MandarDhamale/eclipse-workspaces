@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class MainController {
 
-	public void home() {
+	public String home() {
 		return "home";
 	}
 	
